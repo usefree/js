@@ -336,33 +336,6 @@ function initializeSampleData() {
     });
 }
 
-// Initialize sample data for testing
-function initializeSampleData2() {
-    L1Requests.push({
-        id: "L1-001",
-        description: 'Database connectivity issue2',
-        status: 'In Progress'
-    });
-
-    ProdOpsgenieAlerts.push({
-        id: 'OpsGenie-002',
-        description: 'Service outage detected2',
-        status: 'In Progress'
-    });
-
-    ProdSlackChannelAlerts.push({
-        id: 'Slack-002',
-        description: 'High memory usage detected2',
-        status: 'In Progress'
-    });
-
-    AskDevOpsChannelRequests.push({
-        id: 'DevOps-002',
-        description: 'Request for deployment assistance2',
-        status: 'In Progress'
-    });
-}
-
 function runLoopImmediatelyAndThenEveryMinute() {
     // Call the function immediately
     initializeSampleData();
