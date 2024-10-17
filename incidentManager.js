@@ -24,13 +24,13 @@ function createTaskToResolveIssue(issue) {
 // Function to silence an alert
 function silenceAlert(alert) {
     // Simulate silencing an alert
-    if (alert.status !== 'silenced') {
-        alert.status = 'silenced';
-        console.log(`Silenced alert: ${alert.id}`);
+    if (alert.status !== 'acknowledged') {
+        alert.status = 'acknowledged';
+        console.log(`acknowledged alert: ${alert.id}`);
         // Add a comment or record the silencing
-        alert.silenceComment = `Silenced by Jira task ${alert.jiraTaskNumber}`;
+        alert.silenceComment = `acknowledged by Jira task ${alert.jiraTaskNumber}`;
     } else {
-        console.log(`Alert: ${alert.id} is already silenced.`);
+        console.log(`Alert: ${alert.id} is already acknowledged.`);
     }
 }
 
@@ -182,7 +182,7 @@ async function handleRequest(requestType, requestsArray) {
                 let jiraTask = createTaskToResolveIssue(request.description);
                 // Only silence alerts that are not DevOps Channel Requests
                 if (requestType !== 'DevOpsChannelRequest') {
-                    // Already silenced before resolving
+                    // Already acknowledged before resolving
                     // Optionally, add additional actions if needed
                 }
             } else {
